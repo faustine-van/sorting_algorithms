@@ -23,20 +23,23 @@ int quick_sort_and_partition(int *array, int low, int high)
 			/* Increment index of smaller element*/
 			i++;
 			/*swap(&array[i], &array[a]);*/
-			/*if (i != a)*/
-
-			temp = array[i];
-			array[i] = array[a];
-			array[a] = temp;
-			print_array(array, high + 1);
+			if (i != a)
+			{
+				temp = array[i];
+				array[i] = array[a];
+				array[a] = temp;
+				print_array(array, high + 1);
+			}
 		}
 	}
-	temp = array[i + 1];
-	array[i + 1] = array[high];
-	array[high] = temp;
-	/*swap(&array[i + 1], &array[high]);*/
-	print_array(array, high + 1);
-
+	if (low != high && array[low] != array[high])
+	{
+		temp = array[i + 1];
+		array[i + 1] = array[high];
+		array[high] = temp;
+		/*swap(&array[i + 1], &array[high]);*/
+		print_array(array, high + 1);
+	}
 	return (i + 1);
 }
 /**
