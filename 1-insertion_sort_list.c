@@ -23,7 +23,6 @@ void sort_insert(listint_t **list, listint_t *new_node)
 		new_node->next = *list;
 		new_node->next->prev = new_node;
 		*list = new_node;
-		print_list(*list);
 		return;
 	}
 	else
@@ -39,7 +38,6 @@ void sort_insert(listint_t **list, listint_t *new_node)
 
 		current->next = new_node;
 		new_node->prev = current;
-		print_list(*list);
 	}
 
 }
@@ -68,6 +66,7 @@ void insertion_sort_list(listint_t **list)
 		if (sorted->prev == NULL)
 			*list = sorted;
 		current = next;
+		print_list(*list);
 
 	}
 }
